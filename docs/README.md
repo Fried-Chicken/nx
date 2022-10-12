@@ -2,6 +2,26 @@
 
 ## Markdown syntax available
 
+The default markdown syntax is supported when writing documentation.
+
+### Front matter
+
+Front matter is used to add metadata to your Markdown file (`title` & `description`). It is provided at the very top of the file, enclosed by three dashes `---`. The content is parsed as `YAML`.
+
+If no Front matter is detected, the metadata will be populated with the following:
+
+- `title`: first main title detected
+- `description`: first paragraph detected
+
+```markdown
+---
+title: This is a custom title
+description: This is a custom description
+---
+```
+
+### Custom markdown syntax
+
 The documentation website [nx.dev](https://nx.dev) is using custom Markdown syntax to enable the authors to add functionality to its content.
 
 #### Callouts
@@ -20,8 +40,8 @@ Cards allow to show content in a grid system with a title, a description, a type
 
 ```markdown
 {% cards %}
-{% card title="string" description="string" type="documentation|external|video" url="string" %}
-{% card title="string" description="string" type="documentation|external|video" url="string" %}
+{% card title="string" description="string" type="documentation|external|video" url="string" /%}
+{% card title="string" description="string" type="documentation|external|video" url="string" /%}
 // as many as cards you want
 {% /cards %}
 ```
